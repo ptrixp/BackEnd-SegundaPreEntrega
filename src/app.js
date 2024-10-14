@@ -48,7 +48,7 @@ io.on("connection", async (socket) => {
     socket.on("nuevoProducto", async (producto) => {
         await manager.addProduct(producto);
         const productosActualizados = await manager.getProducts();
-        io.emit("productosActualizados", productosActualizados);
+        io.emit("productosActualizados", productosActualizados);// Enviar a todos los clientes
     });
 
     // Escuchar cuando un cliente elimina un producto
