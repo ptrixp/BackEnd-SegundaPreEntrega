@@ -1,6 +1,50 @@
-h1 {
-    color: rgb(196, 196, 55);
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Contenedor del formulario y la lista */
+h2 {
+    font-family: 'Arial', sans-serif;
+    color: #333;
     text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilos para el formulario */
+#formularioProducto {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+#formularioProducto input {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+#formularioProducto button {
+    padding: 12px;
+    background-color: #00aaff;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#formularioProducto button:hover {
+    background-color: #008ecc;
 }
 
 .contenedorCards {
@@ -16,4 +60,17 @@ h1 {
     margin: 10px;
     padding: 10px;
     min-width: 200px;
+}
+
+button {
+    width: 50%; /* Botón a lo ancho del contenedor */
+    padding: 12px;
+    background-color: #fe5a5a; /* Color azul medio celeste */
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Arial', sans-serif;
 }

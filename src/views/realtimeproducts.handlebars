@@ -1,5 +1,18 @@
-<h2>Además, crear una vista “realTimeProducts.handlebars”, la cual vivirá en el endpoint “/realtimeproducts” en nuestro views router, ésta contendrá la misma lista de productos, sin embargo, ésta trabajará con websockets.
-</h2>
+{{!-- <h2>Además, crear una vista “realTimeProducts.handlebars”, la cual vivirá en el endpoint “/realtimeproducts” en nuestro views router, ésta contendrá la misma lista de productos, sin embargo, ésta trabajará con websockets. --}}
+
+<h2>Productos en Tiempo Real</h2>
+
+<form id="formularioProducto">
+    <input type="text" id="titulo" placeholder="Título" required />
+    <input type="text" id="descripcion" placeholder="Descripción" required />
+    <input type="number" id="precio" placeholder="Precio" required />
+    <button type="submit">Agregar Producto</button>
+</form>
+
+<div id="listaProductos" class="contenedorCards">
+    <!-- Los productos se renderizarán aquí -->
+</div>
+
 
 <script src="https://cdn.socket.io/4.7.4/socket.io.min.js"></script>
 <script src="js/index.js"></script>

@@ -1,14 +1,5 @@
 [
   {
-    "id": 1,
-    "title": "Arroz",
-    "description": "Marolio",
-    "price": 20,
-    "img": "sin imagen",
-    "code": "abc555",
-    "stock": 33
-  },
-  {
     "id": 2,
     "title": "Azúcar",
     "description": "Ledesma",
@@ -90,12 +81,9 @@
     "stock": 33
   },
   {
-    "id": 11,
-    "title": "Helado",
-    "description": "De Menta granizada",
-    "price": 5000,
-    "img": "sin imagen",
-    "code": "aaa558",
-    "stock": 300
+    "title": "ioawd",
+    "description": "osimfdso",
+    "price": 1000,
+    "id": 14
   }
 ]

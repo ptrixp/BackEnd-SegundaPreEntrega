@@ -4,11 +4,15 @@ import { Server } from "socket.io";
 import productRouter from "./routes/products.router.js";
 import cartRouter from "./routes/carts.router.js";
 import viewsRouter from "./routes/views.router.js";
+
+
+//PUERTOS
 const app = express(); 
 const PUERTO = 8080;
 
 //Middleware: 
 app.use(express.json()); 
+app.use(express.urlencoded({ extended: true })); // Para manejar datos de formularios
 //Le decimos al servidor que vamos a trabajar con JSON.
 app.use(express.static("./src/public"));
 
@@ -37,6 +41,20 @@ const manager = new ProductManager("./src/data/productos.json");
 io.on("connection", async (socket) => {
     console.log("Un cliente se conectó");
 
-    //Enviamos el array de productos al cliente:
+    // Enviar la lista inicial de productos al cliente
     socket.emit("productos", await manager.getProducts());
-})
+
+    // Escuchar cuando un cliente agrega un producto
+    socket.on("nuevoProducto", async (producto) => {
+        await manager.addProduct(producto);
+        const productosActualizados = await manager.getProducts();
+        io.emit("productosActualizados", productosActualizados);
+    });
+
+    // Escuchar cuando un cliente elimina un producto
+    socket.on("eliminarProducto", async (idProducto) => {
+        await manager.deleteProduct(idProducto);
+        const productosActualizados = await manager.getProducts();
+        io.emit("productosActualizados", productosActualizados);
+    });
+});
